@@ -1,0 +1,28 @@
+---
+dependencies: []
+#
+galaxy_info:
+  author: acandid
+  description: Install Nginx and ssl and Create Vhost in Debian 10 and RHEL/CentOS 7
+  company: "Almir Candido"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.8
+  platforms:
+    - name: EL
+      versions:
+        - 7
+    - name: Debian
+      versions:
+        - Buster
+#
+  galaxy_tags:
+    - nginx
+    - httpd
+    - web
+    - apache
+    - debian
+    - centos
+    - redhat
+    - site
+#
+allow_duplicates: true

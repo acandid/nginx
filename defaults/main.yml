@@ -1,0 +1,6 @@
+---
+# defaults file for nginx
+#
+web_site: examplo.com
+#
+www_web_site: www.examplo.com

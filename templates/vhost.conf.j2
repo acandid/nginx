@@ -1,0 +1,25 @@
+server {
+    listen 80;
+    server_name {{ web_site }} {{ www_web_site }};
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    
+    server_name {{ web_site }} {{ www_web_site }};
+   
+    ssl_certificate {{ ssl_path }}{{ web_site }}.crt;
+    ssl_certificate_key {{ ssl_path }}{{ web_site }}.key;
+    
+
+    root {{ web_path.path }};
+    index index.html index.htm index.php;
+
+    access_log {{ log_path }}{{ web_site }}.access.log;
+    error_log {{ log_path }}{{ web_site }}.error.log;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}

@@ -1,0 +1,6 @@
+---
+- name: Create test page
+  template:
+    src: test_page.html.j2
+    dest: "{{ web_path.path }}/index.html"
+...

@@ -1,0 +1,9 @@
+---
+- name: Create nginx repository
+  yum_repository:
+    name: nginx
+    description: nginx repo
+    baseurl: "{{ nginx_repo }}"
+    gpgcheck: 0
+    enabled: 1
+...

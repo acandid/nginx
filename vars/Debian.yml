@@ -1,0 +1,11 @@
+packages: 
+  - nginx 
+  - openssl
+#
+srv_web: nginx
+#
+ssl_path: /etc/nginx/ssl-certs/
+#
+vhost_path: /etc/nginx/conf.d/
+#
+log_path: /var/log/nginx/

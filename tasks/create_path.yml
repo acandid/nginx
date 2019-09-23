@@ -1,0 +1,14 @@
+---
+- name: Create Web path
+  file:
+    path: "/var/www/{{ web_site }}/public_html"
+    state: directory
+    recurse: yes
+    mode: 0755
+  register: web_path
+#
+- name: Create SSL path
+  file:
+    path: "{{ ssl_path }}"
+    state: directory
+...

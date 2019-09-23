@@ -1,0 +1,33 @@
+---
+# tasks file for nginx
+- name: Include variables
+  include_vars: "{{ ansible_os_family }}.yml"
+#
+- name: Create repository for Red Hat family
+  import_tasks: create_repo_rhel7.yml
+  when: ansible_os_family == 'RedHat'
+#
+- name: Install {{ packages }} for Red Hat family
+  import_tasks: install_nginx_rhel7.yml
+  when: ansible_os_family == 'RedHat'
+#
+- name: Install {{ packages }} for Debian family
+  import_tasks: install_nginx_deb.yml
+  when: ansible_os_family == 'Debian'
+#
+- name: Create path for documentroot and ssl
+  import_tasks: create_path.yml
+#
+- name: Copy Certificate
+  import_tasks: copy_certs.yml
+#
+- name: Create test page
+  import_tasks: create_test_page.yml
+#
+- name: Create Vhost
+  import_tasks: create_vhost.yml
+#
+- name: Access your test page
+  debug:
+    msg: "https://{{ web_site }} if you don't config DNS use https://{{ ansible_default_ipv4.address }}"
+...

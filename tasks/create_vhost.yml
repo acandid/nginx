@@ -1,0 +1,7 @@
+---
+- name: Create Vhost
+  template:
+    src: vhost.conf.j2
+    dest: "{{ vhost_path }}{{ web_site }}.conf"
+  notify: restart_web
+...

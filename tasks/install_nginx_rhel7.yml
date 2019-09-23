@@ -1,0 +1,6 @@
+---
+- name: install nginx on RedHat
+  yum:
+    name: "{{ packages }}"
+    state: latest
+...

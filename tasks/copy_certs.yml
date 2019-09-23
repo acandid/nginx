@@ -1,0 +1,17 @@
+---
+- name: Copy CRT file
+  copy:
+    src: examplo.com.crt
+    dest: "{{ ssl_path }}{{ web_site }}.crt"
+    mode: 0644
+    owner: root
+    group: root
+#
+- name: Copy KEY file
+  copy:
+    src: examplo.com.key
+    dest: "{{ ssl_path }}{{ web_site }}.key"
+    mode: 0644
+    owner: root
+    group: root
+...
